@@ -16,7 +16,7 @@ items:
         ]
     labels:
       app: centos-gitops1
-      vm.kubevirt.io/template: centos8-server-small
+      vm.kubevirt.io/template: centos-stream-9-server-small
       vm.kubevirt.io/template.revision: "1"
       vm.kubevirt.io/template.version: v0.14.0
     name: centos-gitops1
@@ -35,14 +35,14 @@ items:
               storage: 30Gi
         source:
           pvc:
-            name: centos8
+            name: centos-stream-9
             namespace: openshift-virtualization-os-images
     running: true
     template:
       metadata:
         annotations:
           vm.kubevirt.io/flavor: small
-          vm.kubevirt.io/os: centos8
+          vm.kubevirt.io/os: centos-stream-9
           vm.kubevirt.io/workload: server
         labels:
           kubevirt.io/domain: centos-gitops1

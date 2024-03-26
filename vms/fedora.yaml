@@ -33,14 +33,14 @@ spec:
             storage: 30Gi
       source:
         pvc:
-          name: fedora
+          name: fedora-cloud-39
           namespace: openshift-virtualization-os-images
   running: true
   template:
     metadata:
       annotations:
         vm.kubevirt.io/flavor: small
-        vm.kubevirt.io/os: fedora
+        vm.kubevirt.io/os: fedora-cloud-39
         vm.kubevirt.io/workload: server
       labels:
         kubevirt.io/domain: fedora-gitops1
