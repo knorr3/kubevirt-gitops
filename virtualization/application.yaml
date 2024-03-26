@@ -13,7 +13,7 @@ spec:
     repoURL: https://gitlab.consol.de/openshift/kubevirt-gitops.git
     targetRevision: HEAD
   syncPolicy:
-    automated: {}
+    # automated: {}
     syncOptions:
     - CreateNamespace=true
   ignoreDifferences:
