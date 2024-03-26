@@ -8,22 +8,4 @@ metadata:
     app: kubevirt-hyperconverged
   name: kubevirt-hyperconverged
   namespace: openshift-cnv
-spec:
-  certConfig:
-    ca:
-      duration: 48h0m0s
-      renewBefore: 24h0m0s
-    server:
-      duration: 24h0m0s
-      renewBefore: 12h0m0s
-  featureGates:
-    sriovLiveMigration: false
-    withHostPassthroughCPU: false
-  infra: {}
-  liveMigrationConfig:
-    bandwidthPerMigration: 64Mi
-    completionTimeoutPerGiB: 800
-    parallelMigrationsPerCluster: 5
-    parallelOutboundMigrationsPerNode: 2
-    progressTimeout: 150
-  workloads: {}
+spec: {}
