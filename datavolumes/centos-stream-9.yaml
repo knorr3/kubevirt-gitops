@@ -3,8 +3,8 @@ kind: DataVolume
 metadata:
   annotations:
     cdi.kubevirt.io/storage.bind.immediate.requested: "true"
-    kubevirt.ui/provider: fedora
-  name: fedora
+    kubevirt.ui/provider: centos
+  name: centos-stream-9
 spec:
   pvc:
     accessModes:
@@ -15,5 +15,5 @@ spec:
     volumeMode: Filesystem
   source:
     http:
-      url: https://mirror.arizona.edu/fedora/linux/releases/34/Cloud/x86_64/images/Fedora-Cloud-Base-34-1.2.x86_64.raw.xz
+      url: https://cloud.centos.org/centos/9-stream/x86_64/images/CentOS-Stream-GenericCloud-9-20240325.0.x86_64.qcow2
 
