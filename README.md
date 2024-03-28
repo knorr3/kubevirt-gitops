@@ -27,10 +27,10 @@ Other directories in this repository are designed to support Applications in Arg
 contains a [kustomization.yaml](https://kubectl.docs.kubernetes.io/references/kustomize/glossary/#kustomization)
 and an [application.yaml](https://argo-cd.readthedocs.io/en/stable/getting_started/#6-create-an-application-from-a-git-repository).
 
-### KubeVirt
+<!-- ### KubeVirt
 
 Under the [kubevirt](kubevirt) directory is an ArgoCD application and manifests
-to install KubeVirt on a Kubernetes cluster.
+to install KubeVirt on a Kubernetes cluster. -->
 
 ### OpenShift Virtualization
 
@@ -38,16 +38,28 @@ Under [virtualization](virtualization) are manifests to create an OpenShift
 Virtualization installation using the OpenShift Operator Lifecycle Manager
 (OLM).
 
+```bash
+oc apply -f virtualization/application.yaml
+```
+
 ### DataVolumes
 
 The [datavolumes](datavolumes) directory contains DataVolume manifests which
 will download specific cloud images of Fedora and CentOS 8 Stream for use as
 boot sources for OpenShift Virtualization's included OS templates.
 
+```bash
+oc apply -f datavolumes/application.yaml
+```
+
 ### Virtual Machines
 
 The [vms](vms) directory works with the DataVolumes provided in
 [datavolumes](datavolumes) to create a Fedora and CentOS VM.
+
+```bash
+oc apply -f vms/application.yaml
+```
 
 ### Microsoft Windows 2019 Server Install from ISO
 
@@ -69,3 +81,7 @@ namespace. A short script is provided at
 [regen-configmap.sh](win2k19/regen-configmap.sh) that updates the ConfigMap
 supplied by the repo. If any changes are made, run the script to regenerate the
 ConfigMap, and make sure to check in any changes for ArgoCD to see them.
+
+```bash
+oc apply -f win2k19/application.yaml
+```
