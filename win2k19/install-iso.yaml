@@ -15,6 +15,7 @@ spec:
         storage: 6Gi
     volumeMode: Filesystem
   source:
-    http:
-      url: https://ftpint.consol.de/pub/aknorr/win2k19.iso
+    s3:
+      url: https://kubevirt-demo-win.s3.eu-west-1.amazonaws.com/win2k19.iso
+      secretRef: kubevirt-demo-win
 
