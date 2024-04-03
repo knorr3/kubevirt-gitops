@@ -16,6 +16,6 @@ spec:
     volumeMode: Filesystem
   source:
     s3:
-      url: s3://kubevirt-demo-win/win2k19.iso
+      url: https://kubevirt-demo-win.s3.eu-west-1.amazonaws.com/win2k19.iso
       secretRef: kubevirt-demo-win
 
