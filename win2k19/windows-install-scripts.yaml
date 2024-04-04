@@ -96,12 +96,12 @@ data:
         vm_ready=$(oc get vm windows-install -o jsonpath='{.status.ready}')
     done
 
-    echo "VM is started. Waiting for VMI to finish successfully."
-    vmi_phase=$(oc get vmi windows-install -o jsonpath='{.status.phase}')
-    while [ "$vmi_phase" != "Succeeded" ]
+    echo "VM is started. Waiting for VM to finish successfully."
+    vm_phase=$(oc get vm windows-install -o jsonpath='{.status.printableStatus}')
+    while [ "$vm_phase" != "Stopped" ]
     do
         sleep 30
-        vmi_phase=$(oc get vmi windows-install -o jsonpath='{.status.phase}')
+        vm_phase=$(oc get vm windows-install -o jsonpath='{.status.printableStatus}')
     done
 
     echo "VM has finished installing"
